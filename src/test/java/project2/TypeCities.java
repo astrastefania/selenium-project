@@ -3,11 +3,12 @@ package project2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-
 import java.util.concurrent.TimeUnit;
+import org.testng.annotations.Test;
 
 public class TypeCities {
-    public static void main(String[] args) {
+    @Test
+    public void dropMenuSelectionTest() {
         // declare variables
         WebDriver driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
