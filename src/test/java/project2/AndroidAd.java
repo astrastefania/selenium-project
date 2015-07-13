@@ -17,5 +17,8 @@ public class AndroidAd {
 
         // click on the Android ads, using xPath
         driver.findElement(By.xpath(".//a[@data-mobile='android']")).click();
+
+        // close Firefox
+        driver.close();
     }
 }
