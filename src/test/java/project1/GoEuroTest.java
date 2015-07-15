@@ -11,7 +11,7 @@ public class GoEuroTest {
         // declaration and instantiation of objects/variables
         WebDriver driver = new FirefoxDriver();
         String baseUrl = "http://www.goeuro.es";
-        String expectedTitle = "Tus billetes baratos de tren, autobús y avión online | GoEuro";
+        String expectedTitle = "Tus billetes baratos de tren, autobús y avión onlin | GoEuro";
         String actualTitle = "";
 
         // launch Firefox and direct to the Base URL

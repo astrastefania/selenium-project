@@ -27,14 +27,16 @@ public class CityNotFoundTest {
         driver.findElement(By.xpath(".//*[@id='from_filter']")).sendKeys(cityDreamt);
         driver.findElement(By.xpath(".//*[@id='from_filter']")).sendKeys(Keys.RETURN);
 
-        //return true is a message has been displays
-        if (driver.findElements(By.xpath(".//*[@id='search']/div[2]/div[1]/ul[1]/li") ).size() != 0) {
-            System.out.println("True");
-        }
-        else {System.out.println("False");}
+        //print is the message has been displays
+        if (isElementPresent(driver, ".//*[@id='search']/div[2]/div[1]/ul[1]/li")==true){
+             System.out.println("The message for a missing location has been displayed.");}
+        else System.out.println("There's no message!");
 
         //close the Firefox webdriver
         driver.close();
     }
 
+    public boolean isElementPresent(WebDriver driver, String xpath){
+        return driver.findElements(By.xpath(xpath) ).size()==0;
+    }
 }
