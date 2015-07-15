@@ -37,6 +37,6 @@ public class CityNotFoundTest {
     }
 
     public boolean isElementPresent(WebDriver driver, String xpath){
-        return driver.findElements(By.xpath(xpath) ).size()==0;
+        return driver.findElements(By.xpath(xpath) ).size() !=0;
     }
 }
