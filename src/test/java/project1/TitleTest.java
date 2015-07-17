@@ -5,13 +5,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 // Created by Stefania Delprete on 07/07/15.
 
-public class GoEuroTest {
+public class TitleTest {
 
     public static void main(String[] args) {
         // declaration and instantiation of objects/variables
         WebDriver driver = new FirefoxDriver();
         String baseUrl = "http://www.goeuro.es";
-        String expectedTitle = "Tus billetes baratos de tren, autobús y avión onlin | GoEuro";
+        String expectedTitle = "Tus billetes baratos de tren, AVE, autobús y avión online | GoEuro";
         String actualTitle = "";
 
         // launch Firefox and direct to the Base URL
@@ -22,9 +22,9 @@ public class GoEuroTest {
 
         // test the title is correct
         if (actualTitle.contentEquals(expectedTitle)) {
-            System.out.println("GoEuro test passed!");
+            System.out.println("The title is correct, test passed!");
         } else {
-            System.out.println("GoEuro test failed, the actual title is: " + actualTitle);
+            System.out.println("Test failed, the actual title is: " + actualTitle);
         }
 
         // close Firefox

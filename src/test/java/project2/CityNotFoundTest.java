@@ -10,11 +10,13 @@ import java.util.concurrent.TimeUnit;
 
 public class CityNotFoundTest {
 
+    WebDriver driver;
+
     @Test
     public void checkMessageDisplayed() {
 
         //initialization
-        WebDriver driver = new FirefoxDriver();
+        driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
 
@@ -27,16 +29,16 @@ public class CityNotFoundTest {
         driver.findElement(By.xpath(".//*[@id='from_filter']")).sendKeys(cityDreamt);
         driver.findElement(By.xpath(".//*[@id='from_filter']")).sendKeys(Keys.RETURN);
 
-        //print is the message has been displays
-        if (isElementPresent(driver, ".//*[@id='search']/div[2]/div[1]/ul[1]/li")==true){
-             System.out.println("The message for a missing location has been displayed.");}
+        //check if the message has been displays
+        if (isElementPresent(".//*[@id='search']/div[2]/div[1]/ul[1]/li")==true){
+            System.out.println("The message for a missing location has been displayed.");}
         else System.out.println("There's no message!");
 
         //close the Firefox webdriver
         driver.close();
     }
 
-    public boolean isElementPresent(WebDriver driver, String xpath){
+    public boolean isElementPresent(String xpath){
         return driver.findElements(By.xpath(xpath) ).size() !=0;
     }
 }

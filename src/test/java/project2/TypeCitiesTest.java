@@ -6,7 +6,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import java.util.concurrent.TimeUnit;
 import org.testng.annotations.Test;
 
-public class TypeCities {
+public class TypeCitiesTest {
+
     @Test
     public void dropMenuSelectionTest() {
         // declare variables
