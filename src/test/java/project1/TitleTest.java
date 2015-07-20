@@ -2,14 +2,20 @@ package project1;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
 
 // Created by Stefania Delprete on 07/07/15.
 
 public class TitleTest {
 
-    public static void main(String[] args) {
+    @Test
+    public static void checkSpanishTitle() {
         // declaration and instantiation of objects/variables
         WebDriver driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
         String baseUrl = "http://www.goeuro.es";
         String expectedTitle = "Tus billetes baratos de tren, AVE, autobús y avión online | GoEuro";
         String actualTitle = "";

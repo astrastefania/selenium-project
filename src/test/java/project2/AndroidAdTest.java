@@ -3,13 +3,19 @@ package project2;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
 
 public class AndroidAdTest {
 
-    public static void main(String[] args){
+    @Test
+    public void checkAndroidAdLink(){
 
         // declare variables
         WebDriver driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
         String baseUrl = "http://www.goeuro.com";
 
         // open Firefox and direct to goeuro.com
@@ -18,7 +24,9 @@ public class AndroidAdTest {
         // click on the Android ads, using xPath
         driver.findElement(By.xpath(".//a[@data-mobile='android']")).click();
 
-        // close Firefox
-        driver.close();
+        driver.close(); //will end the whole session.
+
+        // driver.quit() exit the program explicitly
+        // System.exit(0);
     }
 }
