@@ -24,9 +24,6 @@ public class AndroidAdTest {
         // click on the Android ads, using xPath
         driver.findElement(By.xpath(".//a[@data-mobile='android']")).click();
 
-        driver.close(); //will end the whole session.
-
-        // driver.quit() exit the program explicitly
-        // System.exit(0);
+        driver.quit();
     }
 }
